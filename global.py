@@ -1,5 +1,9 @@
 # MAP_copernicus-file
 
+#if catagory not install
+
+!apt-get install -y libproj-dev proj-data proj-bin libgeos-dev
+!pip install cartopy
 uploaded = files.upload()
 #this is first uplode then work
 
