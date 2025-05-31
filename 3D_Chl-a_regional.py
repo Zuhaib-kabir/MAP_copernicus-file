@@ -53,9 +53,10 @@ cbar = plt.colorbar(cf, ax=ax, orientation='horizontal', shrink=0.7, pad=0.05)
 cbar.set_label("Chlorophyll-a (mg/m³)", fontsize=12, weight='bold')
 cbar.ax.tick_params(labelsize=10)
 
-# Title moved ~1cm upward
-plt.text(0.5, 1.05, "Chlorophyll-a Concentration (mg/m³) -Bay of Bengal-Winter-2024",
-         transform=ax.transAxes, fontsize=19, weight='bold', ha='center')
+# Multi-line title moved upward
+plt.text(0.5, 1.07, "Chlorophyll-a Concentration (mg/m³) - Bay of Bengal\nWinter - 2024",
+         transform=ax.transAxes, fontsize=16, weight='bold', ha='center', va='bottom')
+
 
 
 plt.tight_layout()
