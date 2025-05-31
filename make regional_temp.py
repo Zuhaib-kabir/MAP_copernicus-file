@@ -15,7 +15,7 @@ lat = ds['latitude']
 # Subset the data to Bay of Bengal region
 sst_bob = sst.sel(longitude=slice(80, 100), latitude=slice(5, 25))
 lon_bob = sst_bob['longitude']
-lat_bob = sst_bob['latitude']
+lat_bob = sst_bob['latitude']     #if want plot another region than we have to replace bob to region 
 
 fig = plt.figure(figsize=(10, 6))
 ax = plt.axes(projection=ccrs.PlateCarree())
@@ -30,8 +30,9 @@ ax.add_feature(land, zorder=1)
 filled_levels = np.arange(-2, 32, 1)
 line_levels = np.arange(-2, 32, 1)
 
-# Filled contours
-cf = ax.contourf(lon_bob, lat_bob, sst_bob, levels=filled_levels, cmap='jet',
+# Filled contours                
+#if want plot another region than we have to replace bob to region 
+cf = ax.contourf(lon_bob, lat_bob, sst_bob, levels=filled_levels, cmap='jet',   
                  transform=ccrs.PlateCarree(), zorder=0)
 
 # Contour lines
