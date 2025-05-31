@@ -13,7 +13,7 @@ salinity = ds['SA'].squeeze()
 # Subset for Bay of Bengal: lon (80–100°E), lat (0–25°N)
 bob = salinity.sel(longitude=slice(80, 100), latitude=slice(0, 25))
 lon = bob['longitude']
-lat = bob['latitude']
+lat = bob['latitude']            #if want plot another region than we have to replace bob to region 
 
 # Set up the figure
 fig = plt.figure(figsize=(10, 8))
@@ -31,6 +31,7 @@ filled_levels = np.arange(30, 38.5, 0.25)
 line_levels = np.arange(30, 38.5, 0.5)
 
 # Plot filled contours
+#if want plot another region than we have to replace bob to region 
 cf = ax.contourf(lon, lat, bob, levels=filled_levels, cmap='viridis',
                  transform=ccrs.PlateCarree(), zorder=0)
 
