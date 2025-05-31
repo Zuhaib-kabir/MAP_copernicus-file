@@ -12,7 +12,7 @@ ds = xr.open_dataset('/content/cmems_mod_glo_bgc-pft_anfc_0.25deg_P1D-m_17485939
 
 # Extract Chlorophyll-a and subset BoB region (80–100°E, 5–25°N)
 chl = ds['chl'].squeeze()  # <-- Replace with your actual variable name
-chl_bob = chl.sel(longitude=slice(80, 100), latitude=slice(5, 25))
+chl_bob = chl.sel(longitude=slice(80, 100), latitude=slice(5, 25))    #if want plot another region than we have to replace bob to region 
 
 # Get lon/lat
 lon = chl_bob['longitude']
@@ -36,6 +36,7 @@ filled_levels = np.linspace(0, 5, 50)
 line_levels = np.linspace(0, 5, 20)
 
 # Plot filled contours
+#if want plot another region than we have to replace bob to region 
 cf = ax.contourf(lon, lat, chl_bob, levels=filled_levels, cmap='YlGn',
                  transform=ccrs.PlateCarree(), zorder=0)
 
