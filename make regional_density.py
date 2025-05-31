@@ -9,6 +9,7 @@ ds = xr.open_dataset('/content/cmems_obs-mob_glo_phy-sss_my_multi-oi_P1W_1748597
 density = ds['rho'].squeeze()  # Replace 'rho' with actual variable name if different
 
 # Subset for Bay of Bengal region: 5°N–25°N, 80°E–100°E
+#if want plot another region than we have to replace bob to region 
 ds_bob = ds.sel(latitude=slice(5, 25), longitude=slice(80, 100))
 density_bob = ds_bob['rho'].squeeze()
 
@@ -35,6 +36,7 @@ cf = ax.contourf(lon, lat, density_bob, levels=filled_levels, cmap='plasma',
                  transform=ccrs.PlateCarree(), zorder=0)
 
 # Contour lines
+#if want plot another region than we have to replace bob to region 
 cl = ax.contour(lon, lat, density_bob, levels=line_levels, colors='black',
                 linewidths=0.5, transform=ccrs.PlateCarree(), zorder=2)
 ax.clabel(cl, inline=True, fontsize=8, fmt="%.1f")
