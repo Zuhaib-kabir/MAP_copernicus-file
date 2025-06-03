@@ -67,7 +67,7 @@ gl.bottom_labels = True  # Keep bottom axis labels
 gl.left_labels = True    # Keep left axis labels
 
 # Plot the MHW Intensity data
-vmin, vmax = 0, 0.3  # Set the range for MHW Intensity
+vmin, vmax = 0, 0.5  # Set the range for MHW Intensity
 levels = np.linspace(vmin, vmax, 21)  # Levels for the contour
 
 
